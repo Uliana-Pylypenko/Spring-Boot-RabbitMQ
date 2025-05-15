@@ -54,18 +54,18 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_PAT }}
 
       - name: ls target/
         run: ls target/
   
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app .
+          docker build -t ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app:latest .
   
       - name: Push Docker image
         run: |
-          docker push ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app
+          docker push ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app:latest
           
       - name: Install Trivy
         run: |
