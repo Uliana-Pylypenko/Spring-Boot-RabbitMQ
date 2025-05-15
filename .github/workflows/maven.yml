@@ -55,11 +55,11 @@ jobs:
   
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest .
+          docker build -t ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app:latest .
   
       - name: Push Docker image
         run: |
-          docker push ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest
+          docker push ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app:latest
           
       - name: Install Trivy
         run: |
@@ -72,7 +72,7 @@ jobs:
   
       - name: Scan Docker image with Trivy
         run: |
-          trivy image ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest
+          trivy image ghcr.io/uliana-pylypenko/spring-boot-rabbitmq/my-app:latest
   
       - name: Scan source code with Trivy
         run: |
