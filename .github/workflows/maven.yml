@@ -59,8 +59,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: ls target/webapp-0.0.1-SNAPSHOT.jar
-        run: ls target/webapp-0.0.1-SNAPSHOT.jar
+      - name: ls target/
+        run: ls target/
   
       - name: Build Docker image
         run: |
